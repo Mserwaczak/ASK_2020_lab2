@@ -44,7 +44,7 @@ jobs:
            command: |
               echo "$DOCKERHUB_PASSWORD" | docker login -u "mserwaczak" --password-stdin
               sudo docker build ./db -t mserwaczak/node-react-db
-              sudo docker push mserwaczak/node-react-db:latest
+              sudo docker push mserwaczak/node-react-db
               
        - run:
            command: |
