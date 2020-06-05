@@ -72,18 +72,14 @@ workflows:
         - test-server:
            requires:
                - build
-           filters:
-             branches:
-               only:
-                 - master
         - test-client:
            requires:
-               - build
-           filters:
-             branches:
-               only:
-                 - master
+               - build     
         - docker:
            requires:
            - test-server
            - test-client
+           filters:
+             branches:
+               only:
+                 - master
